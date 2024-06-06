@@ -6,8 +6,7 @@ export const getUserList = async () =>{
 }
 
 export const getUserDetail = async (id: string) => {
-    const url = 'https://regress.in/api/users/' + id
-    console.log({url})
-    const response = await axios.get(url)
-    return response.data
-}
+    const response = await fetch(`https://reqres.in/api/users/${id}`);
+    if (!response.ok) throw new Error("Network Error");
+    return response.json();
+  };
