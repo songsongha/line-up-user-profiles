@@ -6,6 +6,8 @@ export const getUserList = async () =>{
 }
 
 export const getUserDetail = async (id: string) => {
-    const response = await axios.get('https://regress.in/api/users/' + id)
+    const url = 'https://regress.in/api/users/' + id
+    console.log({url})
+    const response = await axios.get(url)
     return response.data
 }
